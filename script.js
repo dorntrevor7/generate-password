@@ -24,6 +24,22 @@ function generatePassword() {
     "Do you want to have Capital letters in your password?"
   );
   console.log(capsQuestion);
+
+  // confirms whether or not the password contains Capital letters
+  const lowQuestion = confirm(
+    "Do you want to have Lowercase letters in your password?"
+  );
+  console.log(capsQuestion);
+
+  // confirms whether or not the password contains Capital letters
+  const specQuestion = confirm(
+    "Do you want to have Special Characters in your password?"
+  );
+  console.log(specQuestion);
+
+  // confirms whether or not the password contains Capital letters
+  const numQuestion = confirm("Do you want to have Numbers in your password?");
+  console.log(numQuestion);
 }
 
 // Add event listener to generate button
