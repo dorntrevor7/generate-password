@@ -3,9 +3,11 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  // get the return value from the gereatePassword function and set the value to passowrd
   var password = generatePassword();
+  // grabs the element with the id of password
   var passwordText = document.querySelector("#password");
-
+  // sets the value to the returned password on the html
   passwordText.value = password;
 }
 
@@ -39,13 +41,32 @@ function generatePassword() {
   const numQuestion = confirm("Do you want to have Numbers in your password?");
   // console.log(numQuestion);// Boolean
 
+  // loops over the users amount of times
   for (let i = 0; i < parseInt(passLength); i++) {
     if (capsQuestion) {
-      password += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      // adds to the passowrd a capital letter
+      let capital = alphabet.charAt(
+        Math.floor(Math.random() * alphabet.length)
+      );
+      password += capital;
+      console.log(password); // String
+    }
+    if (specQuestion) {
+      // adds to the passowrd a random special character
+      password += special.charAt(Math.floor(Math.random() * special.length));
       console.log(password);
     }
+    if (numQuestion) {
+      // adds to the passowrd a random number
+      password += number.charAt(Math.floor(Math.random() * number.length));
+    }
+    if (lowQuestion) {
+      // adds to the passowrd a lowercase letter
+      password += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    }
   }
-  return password;
+  // returns users specified length by slicing the variable password
+  return password.slice(0, passLength);
 }
 
 // Add event listener to generate button
