@@ -48,11 +48,10 @@ function generatePassword() {
     for (let i = 0; i < parseInt(passLength); i++) {
       if (capsQuestion) {
         // adds to the passowrd a capital letter
-        let capital = alphabet.charAt(
-          Math.floor(Math.random() * alphabet.length)
-        );
-        password += capital;
-        console.log(password); // String
+        let capital = alphabet.toUpperCase();
+        // console.log(capital);
+        password += capital.charAt(Math.floor(Math.random() * alphabet.length));
+        // console.log(password); // String
       }
       if (specQuestion) {
         // adds to the passowrd a random special character
